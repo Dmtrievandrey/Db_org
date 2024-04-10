@@ -79,5 +79,10 @@ namespace Db_org
           
 
         }
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
+        }
     }
 }
