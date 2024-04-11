@@ -32,12 +32,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -78,8 +79,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -90,19 +91,30 @@
             this.tabPage1.Text = "Организации";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button6
             // 
-            this.button4.Location = new System.Drawing.Point(120, 341);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 45);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Добавить пользователя";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button6.Location = new System.Drawing.Point(730, 342);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(95, 44);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Импортировать из CSV";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(596, 342);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 44);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Экспортировать в CVS";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -113,14 +125,25 @@
             this.tabPage2.Text = "Сотрудники";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button8
             // 
-            this.button3.Location = new System.Drawing.Point(142, 373);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(704, 369);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(96, 38);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "Импортировать из CVS";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(588, 367);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(110, 40);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Экспортировать в CVS";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button2
             // 
@@ -130,6 +153,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Добавить сотрудника";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView2
             // 
@@ -139,16 +163,6 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(866, 334);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(619, 341);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 44);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -177,11 +191,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Db_org
 {
@@ -64,25 +65,83 @@ namespace Db_org
 
 
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form3 form3 = new Form3();
-            form3.Show();
-            form3.FormClosed += new FormClosedEventHandler(form3_FormClosed);
-        }
+     
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            string ds_table = "ORG_INFO";
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                // shows the path to the selected folder in the folder dialog
+            {
                 MessageBox.Show(fbd.SelectedPath);
+            }
+            csv.csv_export(fbd.SelectedPath,ds_table);
 
-            csv.csv_export(fbd.SelectedPath);
 
 
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                string filePath = openFileDialog.FileName;
+
+              
+                string ds_table = "ORG_INFO";
+               csv.csv_import(filePath,ds_table);
+                dataGridView1.DataSource = dB_CONN.Getdata();
+                dataGridView1.DataMember = "ORG_INFO";
+                MessageBox.Show("Данные успешно импортированны!");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            string ds_table = "PERSON_INFO";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show( "Данные сохранены в папке:"+fbd.SelectedPath);
+            }
+            csv.csv_export(fbd.SelectedPath, ds_table);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "csv files (*.csv)|*.csv";
+           
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                string filePath = openFileDialog.FileName;
+
+             
+                string ds_table = "PERSON_INFO";
+                csv.csv_import(filePath, ds_table);
+                dataGridView2.DataSource = dB_CONN.Getdata();
+                dataGridView2.DataMember = "PERSON_INFO";
+                MessageBox.Show("Данные успешно импортированны!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Form3 form3 = new Form3();
+            form3.Show();
+            form3.FormClosed += new FormClosedEventHandler(form3_FormClosed);
         }
     }
 }
